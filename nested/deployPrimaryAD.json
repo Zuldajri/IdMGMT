@@ -49,7 +49,7 @@
                 "typeHandlerVersion": "2.19",
                 "autoUpgradeMinorVersion": "true",
                 "settings": {
-                    "modulesUrl": "https://raw.githubusercontent.com/Zuldajri/RDS/master/CreateADPDC.zip",
+                    "modulesUrl": "https://raw.githubusercontent.com/Zuldajri/IdMGMT/master/CreateADPDC.zip",
                     "configurationFunction": "[variables('adPDCConfigurationFunction')]",
                     "properties": {
                         "domainName": "[parameters('domainName')]",
