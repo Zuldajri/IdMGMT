@@ -11,8 +11,10 @@
       "lbFE": "ADLBFE",
       "lbBE": "ADLBBE",
       "rdpNAT": "ADRDPNAT",
+      "rdpBNAT": "ADBRDPNAT",
       "publiclbFEConfigID": "[concat(variables('publiclbID'),'/frontendIPConfigurations/',variables('lbFE'))]",
       "rdpPort": 3389,
+      "rdpBPort": 13389,
       "publiclbID": "[resourceId('Microsoft.Network/loadBalancers',variables('publicLBName'))]"
     },
     "resources": [{
@@ -53,13 +55,13 @@
                           }
                       },
                       {
-                        "name": "[variables('adBDCRDPNAT')]",
+                        "name": "[variables('rdpBNAT')]",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[variables('adlbFEConfigID')]"
+                                "id": "[variables('publiclbFEConfigID')]"
                             },
                             "protocol": "Tcp",
-                            "frontendPort": "[parameters('bdcRDPPort')]",
+                            "frontendPort": "[variables('rdpBPort')]",
                             "backendPort": 3389,
                             "enableFloatingIP": false
                         }
