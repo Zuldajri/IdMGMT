@@ -23,7 +23,7 @@
               "apiVersion": "2018-08-01",
               "location": "[variables('resourceGroupLocation')]",
               "dependsOn": [
-                  "[variables('publicIPAddressID')]"
+                  "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]"
               ],
               "properties": {
                   "frontendIPConfigurations": [
